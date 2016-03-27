@@ -71,6 +71,15 @@
     3 + 4 is 7, do hide
   </div>
 
+  <h1>Password validator</h1>
+  <br><br>
+  <h2>Sign up page</h2>
+
+  <input type="password" ng-model="password">
+  <br>
+  <p>Your password is {{ password.length }} characters</p>
+  <button ng-show="password.length >= 7">Sign Up!</button>
+
   <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
