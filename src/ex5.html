@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 5</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+
+  <body ng-init="names=['Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks']">
+
+  <h1>Ng-Repeat</h1>
+  <ul ng-repeat='name in names'>
+    <li>
+    {{ name }}
+    </li>
+  </ul>
+
+  <ul ng-init="symbols=['&#9824', '&#9829', '&#9827', '&#9830']">
+    <li ng-repeat='suit in symbols'>
+      {{ suit }}
+    </li>
+  </ul>
+
+  <ul ng-init="array=[1,1,2,5,6,9,9,9]">
+    <li ng-repeat="number in array track by $index">
+      {{ number }}
+    </li>
+  </ul>
+
+  <div class="container">
+    <div ng-controller="myController">
+      <h1>Avs GOATS</h1>
+      <div ng-repeat="player in avalanchePlayers">
+        <p>{{ player.fname }} {{ player.lname }}</p>
+      </div>
+    </div>
+
+    <div ng-controller="myController">
+      <h1>Broncos GOATS</h1>
+      <div ng-repeat="player in broncosPlayers">
+        <p>{{ player.fname }} {{ player.lname }}</p>
+      </div>
+    </div>
+
+    <div ng-controller="myController">
+      <h1>Rockies GOATS</h1>
+      <div ng-repeat="player in rockiesPlayers">
+        <p>{{ player.fname }} {{ player.lname }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h1>Ng-Show/Ng-Hide</h1>
+  <br>
+
+  <div ng-show='3 + 4 == 5'>
+    3 + 4 isn't 5, don't show.
+  </div>
+
+  <div ng-show='3 + 4 == 7'>
+    3 + 4 is 7, do show
+  </div>
+
+  <div ng-hide='3 + 4 == 5'>
+    3 + 4 isn't 5, don't hide
+  </div>
+
+  <div ng-hide='3 + 4 == 7'>
+    3 + 4 is 7, do hide
+  </div>
+
+  <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
