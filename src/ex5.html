@@ -71,14 +71,53 @@
     3 + 4 is 7, do hide
   </div>
 
+
+  <!-- PASSWORD VALIDATOR STUFF -->
+
+
   <h1>Password validator</h1>
   <br><br>
   <h2>Sign up page</h2>
 
-  <input type="password" ng-model="password">
+  <input type="password" ng-model="password" ng->
   <br>
-  <p>Your password is {{ password.length }} characters</p>
-  <button ng-show="password.length >= 7">Sign Up!</button>
+
+  <!-- THREE WAYS TO DO THIS COLOR STUFF -->
+
+  <!-- <span ng-if="password.length < 7">
+    <p ng-style="myStyle={'color':'red'}">
+    Your password is {{ password.length }} characters</p>
+  </span>
+
+  <span ng-if="password.length >= 7">
+    <p ng-style="myStyle={'color':'green'}">
+    Your password is {{ password.length }} characters</p>
+  </span>
+
+  <p ng-class="password.length > 7 ? 'alert-success' : 'alert-danger'">Your password is {{ password.length }} characters</p> -->
+
+  <p ng-class="{ 'alert-danger': password.length < 7, 'alert-success': password.length > 7}">Your password is {{ password.length }} characters</p>
+
+  <button class="btn btn-primary" ng-show="password.length >= 7">Sign Up!</button>
+  <p ng-hide="password.length >=7">Your password is invalid!</p>
+
+  <!-- CAMERA SHOP -->
+
+  <div ng-controller="myController">
+    <h1>CAMERAAAAAAAAAS</h1>
+    <br>
+    <select ng-model="sorts" ng-init="sorts='rating'">
+      <option value="rating">Rating</option>
+      <option value="price">Price</option>
+    </select>
+    <br>
+    <div ng-repeat="camera in cameras | orderBy: sorts:reverse">
+      <p>{{ camera.title }}</p>
+      <img src="{{camera.image}}" width="100px" height="100px">
+      <p>Rating: {{ camera.rating }}</p>
+      <p ng-class="{ 'alert-warning' : camera.onSale}">Price: {{ camera.price | currency }}<span class="alert-warning" ng-show="camera.onSale"> ON SALE!</span></p>
+    </div>
+  </div>
 
   <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
