@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app>
 <head>
+  <meta charset="utf-8">
   <title>{{ greeting }} World</title>
 </head>
 <body>
@@ -17,7 +18,58 @@
 
   <h1>Hi, my name is: {{ name }}</h1>
   <h1>My name is: {{ name2 }}</h1>
-  <h1>My name is: {{ name3 }}</h1>
+  <h1>My name is: (wikky wikky) {{ name3 }}</h1>
+
+  <p>1 + 2 = {{ 1 + 2}}</p>
+  <p>The array [99,43,22] is {{ [99,43,22].length }} items long</p>
+
+  <p>DOLLA DOLLA BILLS! {{ 3.14159265359 | currency }}</p>
+  <p>EURO! {{ 3.14159265359 | currency:'€' }}</p>
+
+  <p>ROUNDING! {{ 3.14159265359 | number:1 }}</p>
+  <p>ROUNDING! {{ 3.14159265359 | number:2 }}</p>
+  <p>ROUNDING! {{ 3.14159265359 | number:3 }}</p>
+  <p>ROUNDING! {{ 3.14159265359 | number:4 }}</p>
+  <p>ROUNDING! {{ 3.14159265359 | number:5 }}</p>
+
+  <p>How many digits you want?</p>
+
+  <select ng-model="digits">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+  </select>
+
+  <p>Pi <span ng-if="digits=='1'">digit</span><span ng-if="digits > '1'">digits</span>: {{ 3.14159265359 | number:digits }}</p>
+
+  <br><br>
+
+  <input type="text" ng-model="string" ng-init="string='Oh my God, Becky.'">
+
+  <p>Yelling: {{ string | uppercase }}</p>
+
+  <p>Not yelling: {{ string | lowercase }}</p>
+
+  <div>
+  <h1>Super Useful Tip Calculator</h1>
+
+  How much did your meal cost?
+  <input type="text" placeholder="amount" ng-model="total">
+  <br><br>
+  How much you gon' tip?
+  <select ng-model="tip">
+    <option value='.1'>10%</option>
+    <option value='.15'>15%</option>
+    <option value='.20'>20%</option>
+    <option value='.25'>25%</option>
+  </select>
+  <h1>Total: {{ total | currency }} </h1>
+  <h1>Tip: {{ total*tip | currency }}</h1>
+  </div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
