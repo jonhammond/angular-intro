@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>{{ greeting }} World</title>
+</head>
+<body>
+  <p>{{1 + 6}}</p>
+
+  <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
+  <p>{{ greeting }} world!</p>
+
+  <input type="text" placeholder="What's yo' name?" ng-model="name" ng-init="name='What?'">
+
+  <input type="text" placeholder="What's yo' name?" ng-model="name" ng-init="name2='Who?'">
+
+  <input type="text" placeholder="What's yo' name?" ng-model="name" ng-init="name3='Slim Shady'">
+
+  <h1>Hi, my name is: {{ name }}</h1>
+  <h1>My name is: {{ name2 }}</h1>
+  <h1>My name is: {{ name3 }}</h1>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+</html>
