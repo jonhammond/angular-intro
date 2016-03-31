@@ -47,3 +47,14 @@ app.controller('myController', ['$scope', function($scope) {
   }
 ];
 }]);
+
+app.controller("MyFirstController", function($scope) {
+  $scope.name="Severus Snape";
+});
+
+app.controller("ExercisesController", function($scope) {
+    $scope.FavColor="Purple";
+    $scope.secondsInACentury=3600*24*365*100;
+    $scope.rightNow=new Date();
+  }
+);

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 5</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+
+  <body>
+
+  <div ng-controller="MyFirstController">
+    <h1>My name is {{ name }}</h1>
+    <input ng-model="name" type="text" placeholder="What is your name?">
+  </div>
+
+  <div ng-controller="ExercisesController">
+    <h1>My favorite color is {{ FavColor }}</h1>
+    <h3>Seconds in a century: {{ secondsInACentury | number }}</h3>
+    <h3>Today's date: {{ rightNow | date: 'fullDate'}}</h3>
+  </div>
+
+  <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
