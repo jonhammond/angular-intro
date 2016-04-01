@@ -7,7 +7,7 @@ app.controller("MadLibsController", function($scope) {
     $scope.noun2="Toes";
     $scope.insect="Roley Poleys";
     $scope.noun3="Sweaters";
-    $scope.verb="Squirts";
+    $scope.verb="Falls";
     $scope.shows=0;
   }
 );

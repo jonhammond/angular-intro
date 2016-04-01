@@ -44,9 +44,18 @@ app.controller('myController', ['$scope', function($scope) {
     rating: 4.2,
     price: 3796.95,
     onSale: true
-  }
-];
+  }]
+  $scope.items= [
+  { item: 'carrot', color: 'orange', type: 'food'},
+  { item: 'watch', color: 'silver', type: 'accessory'},
+  { item: 'sock', color: 'white', type:'clothing'}
+  ];
+  $scope.shit=[{shit: 'traffic'}]
 }]);
+
+app.controller('myController2', ['$scope', function($scope) {
+    $scope.items=[{item: 'broccoli'}]
+  }])
 
 app.controller("MyFirstController", function($scope) {
   $scope.name="Severus Snape";
