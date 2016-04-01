@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 8</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div ng-controller="randomNumberPicker">
+        <h3>The number is: {{ number }}</h3>
+        <button ng-click="pickRandomNumber()" class="btn btn-warning">Pick a number!</button>
+      </div>
+
+      <div ng-controller="reverseText">
+        <h3>Word Reverser</h3>
+        <br>
+        <input type="text" placeholder="Type here" ng-model="string"><br><br>
+        <button class="btn btn-warning" ng-click="reverseText(string)">Reverse!</button><br><br>
+        <p>Reversed string: {{ revString }}</p>
+      </div>
+
+    <h1>Ping Pong Score Keeper</h1>
+    <div class="row" ng-controller="PingPongController">
+      <div class="col-xs-6 scorecard" ng-click="scorePlayer1= scorePlayer1 + 1; serveCount= serveCount + 1">
+        <h3>Player 1</h3>
+        <h3 ng-show="serveCount % 2 == 0 &&serveCount % 4 != 0">Your Serve!</h3>
+        <div>
+          <p class="score">{{ scorePlayer1 }}</p>
+        </div>
+      </div>
+
+      <div class="col-xs-6 scorecard" ng-click="scorePlayer2= scorePlayer2 + 1; serveCount= serveCount + 1">
+        <h3>Player 2</h3>
+        <h3 ng-show="serveCount % 4 == 0">Your Serve!</h3>
+        <div>
+          <p class="score">{{ scorePlayer2 }}</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <button class="btn btn-primary" ng-click="reset()">Reset!</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

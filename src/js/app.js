@@ -60,3 +60,36 @@ app.controller('myController2', ['$scope', function($scope) {
 app.controller("MyFirstController", function($scope) {
   $scope.name="Severus Snape";
 });
+
+app.controller('randomNumberPicker', ['$scope', function($scope) {
+    $scope.number= 5;
+    $scope.pickRandomNumber = function() {
+      $scope.number = Math.floor(Math.random() * 10) +1};
+}]);
+
+app.controller('reverseText', ['$scope', function($scope) {
+    $scope.revString = '';
+    $scope.reverseText = function(string) {
+      var reversed = string.split('').reverse().join('');
+      $scope.revString = reversed;
+    }
+}])
+
+app.controller('PingPongController', ['$scope', function($scope) {
+    $scope.scorePlayer1 = 0;
+    $scope.scorePlayer2 = 0;
+    $scope.serveCount = 0;
+    // $scope.serveFunction = function() {
+
+    // };
+    $scope.reset = function() {
+      $scope.scorePlayer1 = 0;
+      $scope.scorePlayer2 = 0;
+    };
+}])
+
+
+
+
+
+
