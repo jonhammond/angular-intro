@@ -14,3 +14,11 @@
 .score {
   font-size: 140px;
 }
+
+.divbox {
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  border-style: solid;
+  border-width: 6px;
+}

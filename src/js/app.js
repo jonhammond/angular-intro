@@ -79,16 +79,38 @@ app.controller('PingPongController', ['$scope', function($scope) {
     $scope.scorePlayer1 = 0;
     $scope.scorePlayer2 = 0;
     $scope.serveCount = 0;
-    // $scope.serveFunction = function() {
-
-    // };
     $scope.reset = function() {
       $scope.scorePlayer1 = 0;
       $scope.scorePlayer2 = 0;
     };
 }])
 
-
+app.controller('MouseEnterController', ['$scope', '$timeout', function($scope, $timeout) {
+    var colorArray = [];
+    $scope.enterCount = 0;
+    $scope.randomColor = function() {
+      var x=Math.round(0xffffff * Math.random()).toString(16);
+      var y=(6-x.length);
+      var z="000000";
+      var z1 = z.substring(0,y);
+      var color = "#" + z1 + x;
+      $scope.color = {'background-color': color};
+      // console.log('color:',color)
+      colorArray.push(color);
+      console.log('colorArray:', colorArray);
+      return color;
+    };
+    $scope.replay = function() {
+      var prevColor;
+      var displayColors = function () {
+        for (var i=0; i<colorArray.length; i++) {
+        prevColor = colorArray[i];
+        }
+        console.log(prevColor);
+      };
+    $timeout(function() {displayColors();}, 1000);
+    }
+}])
 
 
 

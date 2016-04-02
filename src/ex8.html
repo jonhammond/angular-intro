@@ -27,7 +27,7 @@
     <div class="row" ng-controller="PingPongController">
       <div class="col-xs-6 scorecard" ng-click="scorePlayer1= scorePlayer1 + 1; serveCount= serveCount + 1">
         <h3>Player 1</h3>
-        <h3 ng-show="serveCount % 2 == 0 &&serveCount % 4 != 0">Your Serve!</h3>
+        <h3 ng-show="serveCount % 2 == 0 && serveCount % 4 != 0">Your Serve!</h3>
         <div>
           <p class="score">{{ scorePlayer1 }}</p>
         </div>
@@ -43,6 +43,14 @@
       <div class="col-xs-6">
         <button class="btn btn-primary" ng-click="reset()">Reset!</button>
       </div>
+    </div>
+
+    <div ng-controller="MouseEnterController">
+      <h1>ng-mouseenter</h1>
+      <div class="divbox" ng-mouseenter="enterCount=enterCount + 1; randomColor()" ng-style="color">
+        <h3>The div was entered {{ enterCount }} times</h3>
+      </div>
+      <button class="btn btn-success" ng-click="replay()">Replay</button>
     </div>
 
   </div>
