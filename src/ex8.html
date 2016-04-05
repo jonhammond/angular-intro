@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='myApp'>
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Exercise 8</title>
@@ -53,10 +53,49 @@
       <button class="btn btn-success" ng-click="replay()">Replay</button>
     </div>
 
+    <div ng-controller="ContactsController">
+      <h1>ng-submit: Contacts App</h1>
+      <!-- Add Contact -->
+      <div class="row">
+        <h1>Add Contact</h1>
+        <form>
+          <div class="row">
+            First Name
+            <input type="text" name="name" />
+            Last Name
+            <input type="text" name="lastname"/>
+          </div>
+          <div class="row">
+            Email
+            <input type="text" name="email"/>
+            Phone
+            <input type="text" name="phone"/>
+            <input type="submit" value="Add" class="btn btn-success">
+          </div>
+        </form>
+      </div>
+      <!-- Search Contacts -->
+      <div class="row">
+        <h1>Search</h1>
+        <form>
+          <input type="text" placeholder="Search" ng-model="search"/>
+        </form>
+      </div>
+
+      <div class="row" ng-repeat="contact in myContacts | filter : search">
+        <div class="contact">
+          <p>Name: {{ contact.fName }} {{ contact.lName }}</p>
+          <p>Email: {{ contact.email }}</p>
+          <p>Phone: {{ contact.phone }}</p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>

@@ -101,17 +101,42 @@ app.controller('MouseEnterController', ['$scope', '$timeout', function($scope, $
       return color;
     };
     $scope.replay = function() {
-      var prevColor;
       var displayColors = function () {
         for (var i=0; i<colorArray.length; i++) {
-        prevColor = colorArray[i];
+        var prevColor = colorArray[i];
         }
         console.log(prevColor);
+        $timeout(function() {displayColors();}, 1000)
       };
-    $timeout(function() {displayColors();}, 1000);
     }
 }])
 
 
-
-
+app.controller('ContactsController', ['$scope', function($scope) {
+  $scope.myContacts = [
+    {
+      fName: "Domingo",
+      lName: "Ayala",
+      email: "domingo@beisbol.com",
+      phone: "(303) 333-3333",
+    },
+    {
+      fName: "Harry",
+      lName: "Potter",
+      email: "harrypotter@hogwarts.com",
+      phone: "(111) 111-1111",
+    },
+    {
+      fName: "Joe",
+      lName: "Sakic",
+      email: "superjoe@hockey.com",
+      phone: "(444) 444-4444",
+    },
+    {
+    fName: "Joe",
+    lName: "Dirt",
+    email: "joe@dirt.com",
+    phone: "(222) 222-2222",
+    }
+  ]
+}])

@@ -22,3 +22,10 @@
   border-style: solid;
   border-width: 6px;
 }
+
+.contact {
+  background-color: rgba(0,0,0,.2);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;  
+}
