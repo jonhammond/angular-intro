@@ -58,19 +58,19 @@
       <!-- Add Contact -->
       <div class="row">
         <h1>Add Contact</h1>
-        <form>
+        <form ng-submit="submitContact(newContact)">
           <div class="row">
             First Name
-            <input type="text" name="name" />
+            <input type="text" name="fname" ng-model="newContact.fname"/>
             Last Name
-            <input type="text" name="lastname"/>
+            <input type="text" name="lastname" ng-model="newContact.lname"/>
           </div>
           <div class="row">
             Email
-            <input type="text" name="email"/>
+            <input type="text" name="email" ng-model="newContact.email"/>
             Phone
-            <input type="text" name="phone"/>
-            <input type="submit" value="Add" class="btn btn-success">
+            <input type="text" name="phone" ng-model="newContact.phone"/>
+            <input type="submit" value="Add" class="btn btn-success" />
           </div>
         </form>
       </div>

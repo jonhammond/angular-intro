@@ -137,6 +137,9 @@ app.controller('ContactsController', ['$scope', function($scope) {
     lName: "Dirt",
     email: "joe@dirt.com",
     phone: "(222) 222-2222",
-    }
-  ]
+    }];
+  $scope.submitContact = function (newContact) {
+    $scope.newContact = {};
+    $scope.myContacts.push(newContact);
+  }
 }])
